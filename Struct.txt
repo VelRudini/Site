@@ -1,6 +1,9 @@
 
 │
 ├── index.html
+|
+|
+├── assets
 │
 ├── html
 │   ├── certyfikaty.html
