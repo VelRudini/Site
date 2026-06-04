@@ -1,0 +1,39 @@
+
+│
+├── index.html
+│
+├── html
+│   ├── certyfikaty.html
+│   ├── polityka.html
+│   ├── rodo.html
+│   ├── kontakt.html
+│   ├── akcjonariusze.html
+│   ├── strategie.html
+│   ├── przetargi.html
+│   └── projekty.html
+│
+├── css
+│   └── ...
+│
+├── js
+│   ├── common.js
+│   ├── documents-loader.js
+│   └── navigation.js
+│
+├── data
+│   ├── certyfikaty.json
+│   ├── polityka.json
+│   ├── rodo.json
+│   ├── akcjonariusze.json
+│   ├── strategie.json
+│   ├── przetargi.json
+│   └── projekty.json
+│
+└── res
+    ├── certyfikaty
+    ├── polityka
+    ├── rodo
+    ├── akcjonariusze
+    ├── strategie
+    ├── przetargi
+    └── projekty
