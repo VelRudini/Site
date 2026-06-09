@@ -3,22 +3,22 @@ const app = document.getElementById("app");
 let gallery = [];
 let index = 0;
 
-/* START */
 showPage("firma");
 
-/* ===== ACTIVE MENU ===== */
+/* ACTIVE */
 function setActive(page){
   document.querySelectorAll(".navBtn").forEach(btn=>{
     btn.classList.toggle("active", btn.dataset.page === page);
   });
 }
 
-/* ===== ROUTER ===== */
+/* PAGE SWITCH WITH WOW EFFECT */
 function showPage(page){
 
   setActive(page);
 
   app.style.opacity = 0;
+  app.style.transform = "translateY(20px) scale(.98)";
 
   setTimeout(()=>{
 
@@ -28,10 +28,10 @@ function showPage(page){
         app.innerHTML = `
           <h1>O firmie</h1>
           <div class="twoCol">
-            <img src="assets/firma.jpg">
+            <img src="assets/baner.jpg" class="baner">
             <p>
+              
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatem, exercitationem. Lorem ipsum dolor sit amet.
             </p>
           </div>
         `;
@@ -56,7 +56,7 @@ function showPage(page){
       case "lokalizacja":
         app.innerHTML = `
           <h1>Lokalizacja</h1>
-          <img src="assets/lokalizacja.jpg" style="width:100%;border-radius:18px;">
+          <img src="assets/lokalizacja.jpg" style="width:100%;border-radius:24px;">
         `;
         break;
 
@@ -64,10 +64,9 @@ function showPage(page){
         app.innerHTML = `
           <h1>Kontakt</h1>
           <p>
-            WIELKOPOLSKA SPÓŁDZIELCZA SKŁADNICA MLECZARSKA<br><br>
-            Ul. Przemysłowa  12<br>
-            62-095 Murowana Goślina <br><br>
-            NIP: 7770001559 <br>
+            WSSM Sp. z o.o.<br><br>
+            ul. Orlikowa 15<br>
+            98-220 Zduńska Wola<br><br>
             Tel: +48 43 825 38 00<br>
             sekretariat@wssm.pl
           </p>
@@ -76,11 +75,12 @@ function showPage(page){
     }
 
     app.style.opacity = 1;
+    app.style.transform = "translateY(0) scale(1)";
 
   },150);
 }
 
-/* ===== DOTACJE ===== */
+/* DOTACJE */
 async function loadDotacje(){
 
   const res = await fetch("data/dotacje.json");
@@ -103,7 +103,7 @@ async function loadDotacje(){
   app.style.opacity = 1;
 }
 
-/* ===== GALERIA ===== */
+/* GALERIA */
 async function loadGaleria(){
 
   const res = await fetch("data/galeria.json");

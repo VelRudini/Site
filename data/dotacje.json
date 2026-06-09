@@ -1,10 +1,7 @@
 [
     {
         "image": "assets/dotacje/dotacja1.jpg",
-        "desc": "Plan Odbudowy Kraju 1"
-    },
-    {
-        "image": "assets/dotacje/dotacja2.jpg",
-        "desc": "Plan Odbudowy Kraju 1"
+        "desc": "Plan Odbudowy Kraju"
     }
+    
 ]
