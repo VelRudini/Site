@@ -28,7 +28,7 @@ function showPage(page){
         app.innerHTML = `
           <h1>O firmie</h1>
           <div class="twoCol">
-            <img src="assets/baner.jpg" class="baner">
+            <img src="assets/baner.png" class="baner">
             <p>
               
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -61,17 +61,61 @@ function showPage(page){
         break;
 
       case "kontakt":
-        app.innerHTML = `
-          <h1>Kontakt</h1>
-          <p>
-            WSSM Sp. z o.o.<br><br>
-            ul. Orlikowa 15<br>
-            98-220 Zduńska Wola<br><br>
-            Tel: +48 43 825 38 00<br>
-            sekretariat@wssm.pl
-          </p>
-        `;
-        break;
+  app.innerHTML = `
+    <style>
+      .kontakt-wrap {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .kontakt-box {
+        flex: 1;
+        min-width: 280px;
+        text-align: center;
+      }
+
+      .rejestry {
+        text-align: center;
+        margin-top: 40px;
+      }
+    </style>
+
+    <div class="kontakt-wrap">
+
+      <div class="kontakt-box">
+        <h1><b>Adres siedziby</b></h1>
+        <p>
+          <b>WSSM</b><br>
+          ul. Przemysłowa 12<br>
+          62-095 Murowana Goślina<br><br>
+        </p>
+      </div>
+
+      <div class="kontakt-box">
+        <h1><b>Adres korespondencyjny</b></h1>
+        <p>
+          <b>WSSM</b><br>
+          ul. Orlikowa 15<br>
+          98-220 Zduńska Wola<br>
+          Tel: +48 43 825 38 00<br>
+          sekretariat@wssm.pl
+        </p>
+      </div>
+
+    </div>
+
+    <div class="rejestry">
+      <br><br><p>
+        KRS:<b> 0000141813 </b></t>
+        NIP:<b> 7770001559 </b>
+        REGON:<b >000440118 </b>
+      </p>
+    </div>
+  `;
+  break;
     }
 
     app.style.opacity = 1;
