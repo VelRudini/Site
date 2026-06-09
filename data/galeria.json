@@ -1,0 +1,14 @@
+[
+    {
+        "image": "assets/galeria/1.jpg",
+        "description": "Zdjęcie 1"
+    },
+    {
+        "image": "assets/galeria/2.jpg",
+        "description": "Zdjęcie 2"
+    },
+    {
+        "image": "assets/galeria/3.jpg",
+        "description": "Zdjęcie 3"
+    }
+]

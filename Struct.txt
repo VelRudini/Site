@@ -1,42 +1,29 @@
-
 │
 ├── index.html
-|
-|
-├── assets
 │
-├── html
-│   ├── certyfikaty.html
-│   ├── polityka.html
-│   ├── rodo.html
-│   ├── kontakt.html
-│   ├── akcjonariusze.html
-│   ├── strategie.html
-│   ├── przetargi.html
-│   └── projekty.html
+├── css/
+│   └── style.css
 │
-├── css
-│   └── ...
+├── js/
+│   └── app.js
 │
-├── js
-│   ├── common.js
-│   ├── documents-loader.js
-│   └── navigation.js
+├── data/
+│   ├── dotacje.json
+│   └── galeria.json
 │
-├── data
-│   ├── certyfikaty.json
-│   ├── polityka.json
-│   ├── rodo.json
-│   ├── akcjonariusze.json
-│   ├── strategie.json
-│   ├── przetargi.json
-│   └── projekty.json
+├── assets/
+│   ├── logo.png
+│   ├── firma-placeholder.jpg
+│   ├── lokalizacja.jpg
+│   │
+│   ├── dotacje/
+│   │   ├── dotacja1.jpg
+│   │   ├── dotacja2.jpg
+│   │   └── ...
+│   │
+│   └── galeria/
+│       ├── foto1.jpg
+│       ├── foto2.jpg
+│       └── ...
 │
-└── res
-    ├── certyfikaty
-    ├── polityka
-    ├── rodo
-    ├── akcjonariusze
-    ├── strategie
-    ├── przetargi
-    └── projekty
+└── res/
