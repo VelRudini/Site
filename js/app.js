@@ -1,179 +1,134 @@
-const contentBox = document.getElementById("contentBox");
+const app = document.getElementById("app");
 
-let galleryData = [];
-let galleryIndex = 0;
+let gallery = [];
+let index = 0;
 
 showPage("firma");
 
-async function showPage(page){
-
-    switch(page){
-
-        case "firma":
-            contentBox.innerHTML = `
-                <h1 class="pageTitle">O Firmie</h1>
-
-                <img src="assets/firma-placeholder.jpg" class="placeholder">
-
-                <br><br>
-
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-            `;
-            break;
-
-        case "dotacje":
-            loadDotacje();
-            break;
-
-        case "oferta":
-            contentBox.innerHTML = `
-                <h1 class="pageTitle">Oferta</h1>
-                <p>Oferta zostanie uzupełniona.</p>
-            `;
-            break;
-
-        case "galeria":
-            loadGaleria();
-            break;
-
-        case "rodo":
-            contentBox.innerHTML = `
-                <h1 class="pageTitle">RODO</h1>
-
-                <p>
-                Tutaj wstawisz docelową klauzulę RODO.
-                </p>
-            `;
-            break;
-
-        case "lokalizacja":
-            contentBox.innerHTML = `
-                <h1 class="pageTitle">Lokalizacja</h1>
-
-                <img src="assets/lokalizacja.jpg"
-                     class="placeholder">
-            `;
-            break;
-
-        case "kontakt":
-            contentBox.innerHTML = `
-                <h1 class="pageTitle">Kontakt</h1>
-
-                <p><b>Fortuna Sp. z o.o.</b></p>
-
-                <br>
-
-                <p>
-                ul. Orlikowa 15<br>
-                Tymienice<br>
-                98-220 Zduńska Wola
-                </p>
-
-                <br>
-
-                <p>
-                Tel.: +48 43 825 38 00
-                </p>
-
-                <br>
-
-                <p>
-                sekretariat@fortuna.com.pl
-                </p>
-            `;
-            break;
-    }
+function setActive(btn){
+  document.querySelectorAll(".navBtn").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
 }
 
+function showPage(page){
+
+  app.innerHTML = "";
+
+  switch(page){
+
+    case "firma":
+      app.innerHTML = `
+        <h1>O firmie</h1>
+        <div class="twoCol">
+          <img src="assets/firma.jpg">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Integer nec odio. Praesent libero. Sed cursus ante dapibus.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+        </div>
+      `;
+      break;
+
+    case "dotacje":
+      loadDotacje();
+      break;
+
+    case "oferta":
+      app.innerHTML = `<h1>Oferta</h1><p>Wkrótce...</p>`;
+      break;
+
+    case "galeria":
+      loadGaleria();
+      break;
+
+    case "rodo":
+      app.innerHTML = `
+        <h1>RODO</h1>
+        <p>
+          Klauzula informacyjna RODO...
+        </p>
+      `;
+      break;
+
+    case "lokalizacja":
+      app.innerHTML = `
+        <h1>Lokalizacja</h1>
+        <img src="assets/lokalizacja.jpg" style="width:100%;border-radius:16px;">
+      `;
+      break;
+
+    case "kontakt":
+      app.innerHTML = `
+        <h1>Kontakt</h1>
+        <p>
+          WSSM Sp. z o.o.<br><br>
+          ul. Orlikowa 15<br>
+          98-220 Zduńska Wola<br><br>
+          Tel: +48 43 825 38 00<br>
+          Mail: sekretariat@wssm.pl
+        </p>
+      `;
+      break;
+  }
+}
+
+/* DOTACJE */
 async function loadDotacje(){
 
-    const response = await fetch("data/dotacje.json");
-    const data = await response.json();
+  const res = await fetch("data/dotacje.json");
+  const data = await res.json();
 
-    let html = `
-        <h1 class="pageTitle">Dotacje</h1>
-        <div class="grid">
+  let html = `<h1>Dotacje</h1><div class="grid">`;
+
+  data.forEach(d=>{
+    html += `
+      <div class="card">
+        <img src="${d.image}">
+        <p>${d.desc}</p>
+      </div>
     `;
+  });
 
-    data.forEach(item=>{
-
-        html += `
-            <div class="card">
-                <img src="${item.image}">
-                <p>${item.description}</p>
-            </div>
-        `;
-    });
-
-    html += "</div>";
-
-    contentBox.innerHTML = html;
+  html += `</div>`;
+  app.innerHTML = html;
 }
 
+/* GALERIA */
 async function loadGaleria(){
 
-    const response = await fetch("data/galeria.json");
-    galleryData = await response.json();
+  const res = await fetch("data/galeria.json");
+  gallery = await res.json();
+  index = 0;
 
-    galleryIndex = 0;
-
-    renderGallery();
+  renderGallery();
 }
 
 function renderGallery(){
 
-    const item = galleryData[galleryIndex];
+  const g = gallery[index];
 
-    contentBox.innerHTML = `
-        <h1 class="pageTitle">Galeria</h1>
+  app.innerHTML = `
+    <h1>Galeria</h1>
 
-        <div class="galleryContainer">
+    <div class="gallery">
+      <img src="${g.image}">
+      <p>${g.desc}</p>
 
-            <img src="${item.image}"
-                 class="galleryImage">
-
-            <p>${item.description}</p>
-
-            <div class="galleryButtons">
-
-                <button onclick="prevImage()">
-                    ← Poprzednie
-                </button>
-
-                <button onclick="nextImage()">
-                    Następne →
-                </button>
-
-            </div>
-
-        </div>
-    `;
+      <div class="controls">
+        <button onclick="prev()">←</button>
+        <button onclick="next()">→</button>
+      </div>
+    </div>
+  `;
 }
 
-function nextImage(){
-
-    galleryIndex++;
-
-    if(galleryIndex >= galleryData.length){
-        galleryIndex = 0;
-    }
-
-    renderGallery();
+function next(){
+  index = (index + 1) % gallery.length;
+  renderGallery();
 }
 
-function prevImage(){
-
-    galleryIndex--;
-
-    if(galleryIndex < 0){
-        galleryIndex = galleryData.length - 1;
-    }
-
-    renderGallery();
+function prev(){
+  index = (index - 1 + gallery.length) % gallery.length;
+  renderGallery();
 }
