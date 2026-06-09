@@ -56,7 +56,7 @@ function showPage(page){
       case "lokalizacja":
         app.innerHTML = `
           <h1>Lokalizacja</h1>
-          <img src="assets/lokalizacja.jpg" style="width:100%;border-radius:24px;">
+          <img src="assets/mapa.png" style="width:100%;border-radius:24px;">
         `;
         break;
 
