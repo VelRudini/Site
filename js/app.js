@@ -3,77 +3,84 @@ const app = document.getElementById("app");
 let gallery = [];
 let index = 0;
 
+/* START */
 showPage("firma");
 
-function setActive(btn){
-  document.querySelectorAll(".navBtn").forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active");
+/* ===== ACTIVE MENU ===== */
+function setActive(page){
+  document.querySelectorAll(".navBtn").forEach(btn=>{
+    btn.classList.toggle("active", btn.dataset.page === page);
+  });
 }
 
+/* ===== ROUTER ===== */
 function showPage(page){
 
-  app.innerHTML = "";
+  setActive(page);
 
-  switch(page){
+  app.style.opacity = 0;
 
-    case "firma":
-      app.innerHTML = `
-        <h1>O firmie</h1>
-        <div class="twoCol">
-          <img src="assets/firma.jpg">
+  setTimeout(()=>{
+
+    switch(page){
+
+      case "firma":
+        app.innerHTML = `
+          <h1>O firmie</h1>
+          <div class="twoCol">
+            <img src="assets/firma.jpg">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatem, exercitationem. Lorem ipsum dolor sit amet.
+            </p>
+          </div>
+        `;
+        break;
+
+      case "dotacje":
+        loadDotacje();
+        return;
+
+      case "oferta":
+        app.innerHTML = `<h1>Oferta</h1><p>Wkrótce...</p>`;
+        break;
+
+      case "galeria":
+        loadGaleria();
+        return;
+
+      case "rodo":
+        app.innerHTML = `<h1>RODO</h1><p>Klauzula informacyjna...</p>`;
+        break;
+
+      case "lokalizacja":
+        app.innerHTML = `
+          <h1>Lokalizacja</h1>
+          <img src="assets/lokalizacja.jpg" style="width:100%;border-radius:18px;">
+        `;
+        break;
+
+      case "kontakt":
+        app.innerHTML = `
+          <h1>Kontakt</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Integer nec odio. Praesent libero. Sed cursus ante dapibus.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            WIELKOPOLSKA SPÓŁDZIELCZA SKŁADNICA MLECZARSKA<br><br>
+            Ul. Przemysłowa  12<br>
+            62-095 Murowana Goślina <br><br>
+            NIP: 7770001559 <br>
+            Tel: +48 43 825 38 00<br>
+            sekretariat@wssm.pl
           </p>
-        </div>
-      `;
-      break;
+        `;
+        break;
+    }
 
-    case "dotacje":
-      loadDotacje();
-      break;
+    app.style.opacity = 1;
 
-    case "oferta":
-      app.innerHTML = `<h1>Oferta</h1><p>Wkrótce...</p>`;
-      break;
-
-    case "galeria":
-      loadGaleria();
-      break;
-
-    case "rodo":
-      app.innerHTML = `
-        <h1>RODO</h1>
-        <p>
-          Klauzula informacyjna RODO...
-        </p>
-      `;
-      break;
-
-    case "lokalizacja":
-      app.innerHTML = `
-        <h1>Lokalizacja</h1>
-        <img src="assets/lokalizacja.jpg" style="width:100%;border-radius:16px;">
-      `;
-      break;
-
-    case "kontakt":
-      app.innerHTML = `
-        <h1>Kontakt</h1>
-        <p>
-          WSSM Sp. z o.o.<br><br>
-          ul. Orlikowa 15<br>
-          98-220 Zduńska Wola<br><br>
-          Tel: +48 43 825 38 00<br>
-          Mail: sekretariat@wssm.pl
-        </p>
-      `;
-      break;
-  }
+  },150);
 }
 
-/* DOTACJE */
+/* ===== DOTACJE ===== */
 async function loadDotacje(){
 
   const res = await fetch("data/dotacje.json");
@@ -83,7 +90,7 @@ async function loadDotacje(){
 
   data.forEach(d=>{
     html += `
-      <div class="card">
+      <div class="dotCard">
         <img src="${d.image}">
         <p>${d.desc}</p>
       </div>
@@ -91,10 +98,12 @@ async function loadDotacje(){
   });
 
   html += `</div>`;
+
   app.innerHTML = html;
+  app.style.opacity = 1;
 }
 
-/* GALERIA */
+/* ===== GALERIA ===== */
 async function loadGaleria(){
 
   const res = await fetch("data/galeria.json");
@@ -121,6 +130,8 @@ function renderGallery(){
       </div>
     </div>
   `;
+
+  app.style.opacity = 1;
 }
 
 function next(){

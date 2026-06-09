@@ -4,27 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WSSM</title>
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <header class="header">
-  <img src="assets/logo.png" class="logo" alt="WSSM">
+  <div class="logoBox">
+    <img src="assets/logo2.png" class="logo">
+    <div class="subtitle">WIELKOPOLSKA SPÓŁDZIELCZA SKŁADNICA MLECZARSKA</div>
+  </div>
 
   <nav class="nav">
-    <button onclick="showPage('firma')" class="navBtn active">Firma</button>
-    <button onclick="showPage('dotacje')" class="navBtn">Dotacje</button>
-    <button onclick="showPage('oferta')" class="navBtn">Oferta</button>
-    <button onclick="showPage('galeria')" class="navBtn">Galeria</button>
-    <button onclick="showPage('rodo')" class="navBtn">RODO</button>
-    <button onclick="showPage('lokalizacja')" class="navBtn">Lokalizacja</button>
-    <button onclick="showPage('kontakt')" class="navBtn">Kontakt</button>
+    <button class="navBtn active" data-page="firma" onclick="showPage('firma')">Firma</button>
+    <button class="navBtn" data-page="dotacje" onclick="showPage('dotacje')">Dotacje</button>
+    <button class="navBtn" data-page="oferta" onclick="showPage('oferta')">Oferta</button>
+    <button class="navBtn" data-page="galeria" onclick="showPage('galeria')">Galeria</button>
+    <button class="navBtn" data-page="rodo" onclick="showPage('rodo')">RODO</button>
+    <button class="navBtn" data-page="lokalizacja" onclick="showPage('lokalizacja')">Lokalizacja</button>
+    <button class="navBtn" data-page="kontakt" onclick="showPage('kontakt')">Kontakt</button>
   </nav>
 </header>
 
 <main class="container">
-  <div id="app"></div>
+  <div id="app" class="card"></div>
 </main>
 
 <script src="js/app.js"></script>
