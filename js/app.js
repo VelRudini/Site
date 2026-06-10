@@ -46,17 +46,100 @@ function showPage(page){
         break;
 
       case "galeria":
+        
+        
         loadGaleria();
         return;
 
       case "rodo":
-        app.innerHTML = `<h1>RODO</h1><p>Klauzula informacyjna...</p>`;
+        app.innerHTML = `<style>
+        .rodo{
+        text-align: center;
+        margin-top: 40px;
+        }
+        
+        
+        </style><h1>RODO</h1><p><h2 class="rodo">Informacja o przetwarzaniu przez WIELKOPOLSKĄ SPÓŁDZIELCZĄ</br>
+SKŁADNICE MLECZARSKĄ danych osobowych</h2></br></br></br>
+
+W związku z wejściem w życie Rozporządzenia Parlamentu Europejskiego (UE) nr
+2016/679 z dnia 27.04.2016r w sprawie ochrony osób fizycznych w związku z
+przetwarzaniem danych osobowych i sprawie swobodnego przepływu takich danych
+oraz uchylenia dyrektyw 95/46/WE (ogólne rozporządzenie o ochronie danych) –
+czyli <b>RODO</b>, pragniemy poinformować Państwa o przetwarzaniu
+przez WIELKOPOLSKĄ SPÓŁDZIELCZĄ SKŁADNICE MLECZARSKĄ oraz o
+zasadach na jakich się to będzie odbywać. <u>Jednocześnie Zarząd Spółdzielni
+zapewnia, że dbamy o bezpieczeństwo danych i korzystamy z nich wyłącznie dla
+celów prowadzonej działalności.</u></br></br>
+<h2>Klauzula informacyjna:</h2></br></br>
+1. Administratorem Pani/Pana danych osobowych jest <b>WIELKOPOLSKA
+SPÓŁDZIELCZA SKŁADNICA MLECZARSKA</b>  Przemysłowa 12, 62-095 Murowana
+Goślina, Polska (NIP 777 000 15 59) zwany dalej Administratorem. Administrator
+prowadzi operacje przetwarzania Pani/Pana danych osobowych.</br></br>
+2. Z Administratorem można się skontaktować:</br></br>
+- listownie na adres korespondencyjny: <b>WSSM</b>; ul. Orlikowa 15, Tymienice; 98-220
+Zduńska Wola </br>
+- przez email: <a href="mailto: sekretariat@wssm.pl ">sekretariat@wssm.pl</a></br></br>
+3. Pani/Pana dane osobowe przetwarzane będą w konkretnych o prawnie
+uzasadnionych celach realizowanych przez Administratora, co oznacza w
+szczególności:</br></br>
+a/ zawarcie i wykonanie umowy, w której jest Pani/Pan stroną na podstawie art. 6
+ust. 1 lit. b Rozporządzenia Parlamentu Europejskiego (UE) nr 2016/679 z dnia
+27.04.2016r (RODO).</br></br>
+b/ ustalenie, dochodzenie lub obrona w razie zaistnienia wzajemnych roszczeń na
+podstawie art. 6 ust. 1 lit. f Rozporządzenia Parlamentu Europejskiego (UE) nr
+2016/679 z dnia 27.04.2016r (RODO).</br></br>
+c/ wypełnienie obowiązku prawnego na podstawie art. 6 ust. 1 lit. f Rozporządzenia
+Parlamentu Europejskiego (UE) nr 2016/679 z dnia 27.04.2016r (RODO).</br></br>
+d/ przetwarzanie jest niezbędne do celów wynikających z prawnie interesów
+realizowanych przez Administratora i Rady (UE) z dnia 27.04.2016r (RODO).
+</br></br>
+4. Pani/ Pana dane osobowe będą przetwarzane przez okres obowiązywania umowy,
+a w przypadku danych podanych fakultatywnie – do czasu wycofania zgody. Okres
+przetwarzania danych osobowych może zostać przedłużony do czasu wygaśnięcia
+wzajemnych roszczeń wynikających z umowy. Dane przetwarzane w celu
+wypełnienia ciążących na Administratorze obowiązków prawnych przetwarzanie będą
+w zakresie i przez cały czas wymagany przepisami prawa.</br></br>
+5. Pani/ Pana dane osobowe będą przekazywane podmiotom, którym zostanie
+zlecone przetwarzanie danych, np. dostawcom usług IT, księgowości. Podmioty te
+przetwarzają dane na podstawie umowy powierzenia przetwarzania danych i tylko
+zgodnie z poleceniami Administratora.</br></br>
+6. Pani/Pana dane osobowe nie będą przekazywane do państwa trzeciego lub
+organizacji międzynarodowych.</br></br>
+7. Podanie danych jest dobrowolne, ale niezbędne do zawarcia umowy,
+konsekwencją niepodania danych wymaganych obligatoryjnie jest brak możliwości
+zawarcia i wykonania umowy.</br></br>
+8. Posiada Pani/Pan następujące prawa związane z przetwarzaniem danych
+osobowych:</br></br>
+a/ prawo wycofania zgody na przetwarzanie danych osobowych/ jeśli była udzielona,</br></br>
+b/ prawo dostępu do treści danych osobowych oraz żądania ich sprostowania
+(poprawienie, uzupełnienia), usunięcia, ograniczenia przetwarzania, przenoszenia
+danych oraz prawo wniesienia sprzeciwu względem przetwarzania danych
+osobowych,</br></br>
+9. W zakresie, w jakim dane są przetwarzane na podstawie zgody – Pani/Pan prawo
+wycofania zgody na przetwarzanie danych osobowych w dowolnym momencie.
+Wycofanie zgody nie ma wpływu na zgodność z prawem przetwarzania, którego
+dokonano na podstawie udzielonej uprzednio zgody, a przed jej wycofaniem. Zgodę
+można wycofać poprzez wysłanie oświadczenia o wycofaniu zgody na wskazany
+adres korespondencyjny lub email.</br></br>
+10. Pani/Pana dane osobowe nie podlegają zautomatyzowaniu podejmowaniu
+decyzji. W tym profilowaniu.</br></br>
+11. Przysługuje Pani/Panu prawo wniesienia skargi do organu nadzorczego
+zajmującego się ochroną danych osobowych.</p>`;
         break;
 
       case "lokalizacja":
         app.innerHTML = `
+        <style>
+        .lokalizacja{
+        text-align: center;
+        margin-top: 40px;
+    }
+        </style>
           <h1>Lokalizacja</h1>
           <img src="assets/mapa.png" style="width:100%;border-radius:24px;">
+          <br><p class="lokalizacja"><b>ul. Orlikowa 15, Tymienice
+          98-220 Zduńska Wola</b></p>
         `;
         break;
 
@@ -98,7 +181,7 @@ function showPage(page){
         <h1><b>Adres korespondencyjny</b></h1>
         <p>
           <b>WSSM</b><br>
-          ul. Orlikowa 15<br>
+          ul. Orlikowa 15, Tymienice<br>
           98-220 Zduńska Wola<br>
           Tel: +48 43 825 38 00<br>
           sekretariat@wssm.pl
@@ -148,36 +231,70 @@ async function loadDotacje(){
 }
 
 /* GALERIA */
-async function loadGaleria(){
-
+async function loadGaleria() {
   const res = await fetch("data/galeria.json");
   gallery = await res.json();
-  index = 0;
-
   renderGallery();
 }
 
-function renderGallery(){
-
-  const g = gallery[index];
-
-  app.innerHTML = `
-    <h1>Galeria</h1>
-
-    <div class="gallery">
-      <img src="${g.image}">
-      <p>${g.desc}</p>
-
-      <div class="controls">
-        <button onclick="prev()">←</button>
-        <button onclick="next()">→</button>
-      </div>
+function renderGallery() {
+  let html = `
+    
+    <h1 style="text-align:center;">Galeria</h1>
+     <div class="banner-container">
+      <img src="assets/banerKPO.jpg" class="baner" alt="Baner ">
     </div>
+    <div class="gallery-grid">
   `;
+
+  gallery.forEach((item, idx) => {
+    html += `
+      <img src="${item.image}" alt="${item.desc}" class="thumbnail" onclick="openLightbox(${idx})">
+    `;
+  });
+
+  html += `</div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-controls">
+      <button class="lightbox-btn" id="prevBtn" onclick="prevLightbox()">❮</button>
+      <button class="lightbox-btn" id="closeBtn" onclick="closeLightbox()">×</button>
+      <button class="lightbox-btn" id="nextBtn" onclick="nextLightbox()">❯</button>
+    </div>
+    <img src="" alt="" id="lightbox-img">
+  </div>
+  `;
+
+  app.innerHTML = html;
+
+  // Inicjujemy zmienne do lightbox
+  window.currentIndex = 0;
+
+  // Funkcje obsługi lightbox
+  window.openLightbox = (idx) => {
+    window.currentIndex = idx;
+    document.getElementById('lightbox').classList.add('show');
+    document.getElementById('lightbox-img').src = gallery[idx].image;
+  };
+
+  window.closeLightbox = () => {
+    document.getElementById('lightbox').classList.remove('show');
+  };
+
+  window.nextLightbox = () => {
+    window.currentIndex = (window.currentIndex + 1) % gallery.length;
+    document.getElementById('lightbox-img').src = gallery[window.currentIndex].image;
+  };
+
+  window.prevLightbox = () => {
+    window.currentIndex = (window.currentIndex - 1 + gallery.length) % gallery.length;
+    document.getElementById('lightbox-img').src = gallery[window.currentIndex].image;
+  };
 
   app.style.opacity = 1;
 }
-
+/*
 function next(){
   index = (index + 1) % gallery.length;
   renderGallery();
@@ -186,4 +303,4 @@ function next(){
 function prev(){
   index = (index - 1 + gallery.length) % gallery.length;
   renderGallery();
-}
+}*/
