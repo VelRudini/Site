@@ -117,7 +117,21 @@ blockquote{
         return;
 
       case "oferta":
-        app.innerHTML = `<h1>Oferta</h1><p>W związku z rozszerzeniem działalności spółdzielni o:</br>
+        app.innerHTML = `
+        <style>
+        blockquote{
+  margin-top:20px;
+  padding:20px 25px;
+  border-left:5px solid var(--primary);
+  background:#eef5ff;
+  border-radius:12px;
+  font-size:18px;
+  font-style:italic; font-style:bold;
+}
+  </style>
+        
+        
+        <h1>Oferta</h1><p>W związku z rozszerzeniem działalności spółdzielni o:</br>
 Utworzenie centrum przechowalniczo – magazynowo - dystrybucyjnego wraz z infrastrukturą
 towarzyszącą niezbędną do świadczenia usługi przygotowania do sprzedaży i pakowania musów owocowych
 <b></br></br>
@@ -129,8 +143,8 @@ Możliwości techniczne:</br>
 - szerokość i wysokość opakowania analizowana indywidualnie wg potrzeb zamawiającego,</br>
 - nakrętka typu Choke Free Caps.</br>
 - pakowane w karton jednorzędowy o maksymalnej głębokości 400mm typu wrap-around (pełny).</br>
-
-Zapytania prosimy kierować na adres mailowy:  <a href="mailto: sekretariat@wssm.pl ">sekretariat@wssm.pl</a></p> 
+<blockquote>
+<b>Zapytania prosimy kierować na adres mailowy:</b>  <a href="mailto: sekretariat@wssm.pl "><b>sekretariat@wssm.pl</b></a></p> </blockquote>
 
 </br></br>
 
@@ -269,8 +283,7 @@ zajmującego się ochroną danych osobowych.</p>`;
     </a>
 </div>
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d520.796840980747!2d18.91311129308074!3d51.61695805956566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTHCsDM3JzAxLjIiTiAxOMKwNTQnNDcuNCJF!5e0!3m2!1spl!2spl!4v1781198260349!5m2!1spl!2spl" width="800" height="600" style="border:5;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        `;
+      `;
         break;
 
       case "kontakt":
@@ -314,7 +327,7 @@ zajmującego się ochroną danych osobowych.</p>`;
           ul. Orlikowa 15, Tymienice<br>
           98-220 Zduńska Wola<br>
           Tel: +48 43 825 38 00<br>
-          sekretariat@wssm.pl
+          <a href="mailto: sekretariat@wssm.pl ">sekretariat@wssm.pl</a>
         </p>
       </div>
 
