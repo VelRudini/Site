@@ -29,11 +29,86 @@ function showPage(page){
           <h1>O firmie</h1>
           <div class="twoCol">
             <img src="assets/baner.png" class="baner">
-            <p>
-              
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
+           <style>h2{
+  margin-top:35px;
+  margin-bottom:15px;
+  color:var(--primary);
+}
+
+ul{
+  padding-left:25px;
+  line-height:1.9;
+  font-size:19px;
+}
+
+blockquote{
+  margin-top:20px;
+  padding:20px 25px;
+  border-left:5px solid var(--primary);
+  background:#eef5ff;
+  border-radius:12px;
+  font-size:18px;
+  font-style:italic; font-style:bold;
+}</style>
+
+</br></br>
+<p>
+  <strong>Wielkopolska Spółdzielcza Składnica Mleczarska</strong>
+  z siedzibą w Murowanej Goślinie przy ul. Przemysłowej 12 została
+  założona w 2002 roku i wpisana do rejestru przedsiębiorstw KRS
+  prowadzonego przez Sąd Rejonowy Poznań – Nowe Miasto i Wilda
+  w Poznaniu, VIII Wydział Gospodarczy Krajowego Rejestru Sądowego.
+</p>
+
+<p>
+  <strong>KRS:</strong> 0000141813<br>
+  <strong>REGON:</strong> 000440118<br>
+  <strong>NIP:</strong> 7770001559
+</p>
+
+<p>
+  Prezesem Zarządu Spółdzielni jest
+  <strong>Pan Jacek Andrzej Raj</strong>.
+</p>
+
+<h2>Zakres działalności</h2>
+
+<ul>
+  <li>Zakup i sprzedaż hurtowa wyrobów mleczarskich, olejów i tłuszczów jadalnych.</li>
+  <li>Sprzedaż detaliczna wyrobów mleczarskich.</li>
+  <li>Sprzedaż detaliczna artykułów spożywczych.</li>
+  <li>Pozostała sprzedaż detaliczna.</li>
+  <li>Magazynowanie i przechowywanie towarów.</li>
+  <li>Pozostała sprzedaż hurtowa wyspecjalizowana w zakresie produkcji mleczarskiej.</li>
+  <li>Wynajem nieruchomości na własny rachunek.</li>
+</ul>
+
+<h2>Dotacja KPO</h2>
+
+<p>
+  W 2024 roku Wielkopolska Spółdzielcza Składnica Mleczarska otrzymała
+  dofinansowanie w ramach programu
+  <strong>KPO A1.4.1 – Inwestycje na rzecz dywersyfikacji i skracania
+  łańcucha dostaw produktów rolnych i spożywczych oraz budowy odporności
+  podmiotów uczestniczących w łańcuchu dostaw.</strong>
+</p>
+</br>
+<p>
+  Dzięki pozyskanym środkom zrealizowano inwestycję:
+  <blockquote><b>
+  Utworzenie centrum przechowalniczo–magazynowo–dystrybucyjnego
+  wraz z infrastrukturą towarzyszącą niezbędną do świadczenia usług
+  przygotowania do sprzedaży i pakowania musów owocowych.</b>
+</blockquote>
+</p>
+
+</br></br>
+
+
           </div>
+          <div class="banner-container">
+      <img src="assets/banerKPO.jpg" class="baner" alt="Baner ">
+    </div>
         `;
         break;
 
@@ -42,7 +117,27 @@ function showPage(page){
         return;
 
       case "oferta":
-        app.innerHTML = `<h1>Oferta</h1><p>Wkrótce...</p>`;
+        app.innerHTML = `<h1>Oferta</h1><p>W związku z rozszerzeniem działalności spółdzielni o:</br>
+Utworzenie centrum przechowalniczo – magazynowo - dystrybucyjnego wraz z infrastrukturą
+towarzyszącą niezbędną do świadczenia usługi przygotowania do sprzedaży i pakowania musów owocowych
+<b></br></br>
+Serdecznie zapraszamy do składania zapytań ofertowych  w zakresie rozlewu, pakowania i konfekcjonowania gęstych musów owocowych w opakowaniach typu pouch.
+</b></br></br>
+Możliwości techniczne:</br>
+- produkt rozlewany – analizowany indywidualnie wg potrzeb zamawiającego,</br>
+- opakowanie typu POUCH (doypack) o gramaturze od 80g do 200g,</br>
+- szerokość i wysokość opakowania analizowana indywidualnie wg potrzeb zamawiającego,</br>
+- nakrętka typu Choke Free Caps.</br>
+- pakowane w karton jednorzędowy o maksymalnej głębokości 400mm typu wrap-around (pełny).</br>
+
+Zapytania prosimy kierować na adres mailowy:  <a href="mailto: sekretariat@wssm.pl ">sekretariat@wssm.pl</a></p> 
+
+</br></br>
+
+<div class="banner-container">
+      <img src="assets/banerKPO.jpg" class="baner" alt="Baner ">
+    </div>
+    <div class="gallery-grid">`;
         break;
 
       case "galeria":
@@ -135,11 +230,46 @@ zajmującego się ochroną danych osobowych.</p>`;
         text-align: center;
         margin-top: 40px;
     }
+        .kontaktMapa{
+    text-align:center;
+}
+
+.mapBtn{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 24px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.mapBtn:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
         </style>
           <h1>Lokalizacja</h1>
           <img src="assets/mapa.png" style="width:100%;border-radius:24px;">
+
+
+
+
+
           <br><p class="lokalizacja"><b>ul. Orlikowa 15, Tymienice
           98-220 Zduńska Wola</b></p>
+
+          <div class="kontaktMapa">
+    <a href="https://maps.app.goo.gl/H4SDzKUNiDZLMk3R7"
+       target="_blank"
+       class="mapBtn">
+        📍 Otwórz w Google Maps
+    </a>
+</div>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d520.796840980747!2d18.91311129308074!3d51.61695805956566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTHCsDM3JzAxLjIiTiAxOMKwNTQnNDcuNCJF!5e0!3m2!1spl!2spl!4v1781198260349!5m2!1spl!2spl" width="800" height="600" style="border:5;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         `;
         break;
 

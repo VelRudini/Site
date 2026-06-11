@@ -141,7 +141,7 @@ h1{
 }
 .baner {
   width: 100%;
-  height: 350px; /* stała wysokość */
+  height: 250px; /* stała wysokość */
   object-fit: contain; /* cały obrazek widoczny, bez ucinania */
   object-position: center;
   display: block;
